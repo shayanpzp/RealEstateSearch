@@ -44,5 +44,9 @@ staticfiles/
 .env
 *.env
 
+# ignore
+.gitignore
+*.gitignore
+
 # macOS-specific files
 .DS_Store
