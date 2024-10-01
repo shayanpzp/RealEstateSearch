@@ -1,0 +1,31 @@
+# Python
+*.py[cod]
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+bin/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+*.egg-info/
+.eggs/
+*.log
+
+# Django
+*.sqlite3
+*.pyc
+media/
+staticfiles/
+db.sqlite3
+.env
+.venv
+
+# Elasticsearch
+.elasticsearch/
+logs/
