@@ -38,6 +38,10 @@
                         <p class="text-gray-600">{{ property.location }}</p>
                         <p class="text-blue-500 font-bold">{{ property.price }} $</p>
                         <p class="text-gray-500 mt-2">Bedrooms: {{ property.bedrooms }} | Bathrooms: {{ property.bathrooms }}</p>
+                        
+                        <a href="{% url 'property_detail' property.id %}" class="block mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">
+                            View Details
+                        </a>
                     </div>
                 </div>
             {% endfor %}
