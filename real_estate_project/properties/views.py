@@ -1,5 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Property
+from .serializers import PropertySerializer
+from rest_framework import viewsets
+
 
 def home(request):
     properties = Property.objects.all()
@@ -32,3 +35,7 @@ def search(request):
 def property_detail(request, id):
     property = get_object_or_404(Property, id=id)
     return render(request, 'properties/property_detail.html', {'property': property})
+
+class PropertyViewSet(viewsets.ModelViewSet):
+    queryset = Property.objects.all()
+    serializer_class = PropertySerializer
