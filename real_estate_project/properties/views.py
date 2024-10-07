@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Property
 from .serializers import PropertySerializer
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 def home(request):
@@ -39,3 +40,7 @@ def property_detail(request, id):
 class PropertyViewSet(viewsets.ModelViewSet):
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    filterset_fields = ['price', 'bedrooms', 'location']
+    search_fields = ['title', 'description', 'location']
+    ordering_fields = ['price', 'bedrooms']
